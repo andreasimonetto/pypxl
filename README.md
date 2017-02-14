@@ -29,8 +29,8 @@ Images
 	# Pixelate and display an simage
 	./pypxl_image.py -k 6 -s 4 4 test.png
 
-![Test image](https://sourceforge.net/images/test.png)
-![Pixelate result](https://sourceforge.net/images/test_pxl.png)
+![Test image](/goat/pypxl/raw/master/test.png)
+![Pixelate result](/goat/pypxl/raw/master/test_pxl.png)
 
 Videos
 ------

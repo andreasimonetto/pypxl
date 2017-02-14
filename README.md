@@ -8,6 +8,7 @@ better performance.
 Dependencies
 ------------
 
+	:::bash
 	# Mandatory
 	sudo apt-get install python-numpy python-sklearn python-opencv
 
@@ -27,6 +28,7 @@ Images
 Main options are -s (number of pixels in the resulting image) and -k
 (number of clusters in K-Means). Usage example:
 
+	:::bash
 	# Pixelate and display an simage
 	./pypxl_image.py -k 6 -s 4 4 test.png
 
@@ -46,6 +48,7 @@ you can apply a pre-scale to each frame to reduce the time spent on K-Means
 pypxl_video.py can process only video tracks. The audio can be extracted and
 re-added to the pixelated video with avconv:
 
+	:::bash
 	# Extract audio from source video
 	avconv -i src.avi -c:a copy src_audio.mp3
 

@@ -5,7 +5,7 @@ import cv2
 from sklearn.cluster import MiniBatchKMeans
 import numpy as np
 
-__version__   = '1.0.0'
+__version__   = '1.0.1'
 __author__    = 'Goat'
 __email__     = 'goat@ridiculousglitch.com'
 __license__   = 'BSD-2'

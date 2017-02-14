@@ -8,7 +8,7 @@ from pypxl import process_frame
 def process_frame_tuple(args):
     """One argument version of process_frame(), taking arguments as a tuple."""
 
-    return process_frame(*args)
+    return None if args[0] is None else process_frame(*args)
 
 def stream_multiread(stream, n=1):
     """Video stream (cv2.VideoCapture) iterator, able to read n frames a time."""
@@ -44,10 +44,10 @@ if __name__ == '__main__':
     video_in = cv2.VideoCapture(args.path_in)
 
     # Open output video (initially empty)
-    fourcc_out = int(video_in.get(cv2.CAP_PROP_FOURCC)) if args.codec is None else cv2.VideoWriter_fourcc(*(args.codec.upper()))
-    fps_out = int(video_in.get(cv2.CAP_PROP_FPS))
-    width_out = int(video_in.get(cv2.CAP_PROP_FRAME_WIDTH))
-    height_out = int(video_in.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    fourcc_out = int(video_in.get(cv2.cv.CV_CAP_PROP_FOURCC if 'cv' in dir(cv2) else cv2.CAP_PROP_FOURCC)) if args.codec is None else cv2.VideoWriter_fourcc(*(args.codec.upper()))
+    fps_out = int(video_in.get(cv2.cv.CV_CAP_PROP_FPS if 'cv' in dir(cv2) else cv2.CAP_PROP_FPS))
+    width_out = int(video_in.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH if 'cv' in dir(cv2) else cv2.CAP_PROP_FRAME_WIDTH))
+    height_out = int(video_in.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT if 'cv' in dir(cv2) else cv2.CAP_PROP_FRAME_HEIGHT))
     video_out = cv2.VideoWriter(args.path_out, fourcc_out, fps_out, (width_out, height_out)) # Fixed Xvid 640x480@20fps
 
     if args.processes_num <= 1:

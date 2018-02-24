@@ -38,7 +38,7 @@ def im_quantize(im, n_clusters):
     # - Reshape the image into a feature vector so that k-means can be applied
     # - Apply k-means using the specified number of clusters and then
     #   create the quantized image based on the predictions
-    clt = MiniBatchKMeans(n_clusters=n_clusters)
+    clt = MiniBatchKMeans(n_clusters=n_clusters, n_init=8)
     labels = clt.fit_predict(im_colorspace.reshape((w * h, 3)))
     im_quant_colorspace = clt.cluster_centers_.astype(np.uint8)[labels].reshape((h, w, 3))
 

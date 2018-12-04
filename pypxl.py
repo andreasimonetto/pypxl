@@ -6,10 +6,10 @@ from sklearn.cluster import MiniBatchKMeans
 import numpy as np
 
 __version__   = '1.0.1'
-__author__    = 'Goat'
-__email__     = 'goat@ridiculousglitch.com'
+__author__    = 'Andrea Simonetto'
+__email__     = 'self@andrea.simonetto.name'
 __license__   = 'BSD-2'
-__copyright__ = 'Copyright (c) 2017, Ridiculous Glitch'
+__copyright__ = 'Copyright (c) 2018, Andrea Simonetto'
 
 def process_frame(im, width, height, n_clusters=16, prescale_size=None):
     h, w = im.shape[:2]
